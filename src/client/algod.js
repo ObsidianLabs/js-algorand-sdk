@@ -3,7 +3,7 @@ const client = require('./client');
 
 function Algod(token = '', baseServer = "http://r2.algorand.network", port = 4180, headers = {}) {
     // workaround to allow backwards compatibility for multiple headers
-    let tokenHeader = token;
+    let tokenHeader = token || {};
     if (typeof (tokenHeader) == 'string') {
         tokenHeader = {"X-Algo-API-Token": tokenHeader};
     }
